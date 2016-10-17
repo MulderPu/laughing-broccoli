@@ -2,8 +2,8 @@
     echo "Registration success! Please click back to continue~ Have a nice day.</br>";
 
     if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['email']) || isset($_POST['phone']) ){
-        $fileName = "../data/customer.xml";
-        if(!file_exists($fileName)){
+        $xmlFile = "../data/customer.xml";
+        if(!file_exists($xmlFile)){
             createXML();
         }else{
             saveToXML();
@@ -42,7 +42,7 @@
     }
 
     function createXML(){
-        $fileName = "../data/customer.xml";
+        $xmlFile = "../data/customer.xml";
         $customerID = 0;
         $xml = new DOMDocument("1.0","UTF-8");
         $xml->formatOutput=true;
@@ -67,7 +67,7 @@
 
         $xml->appendChild($infoTag);
 
-        $xml->save($fileName);
+        $xml->save($xmlFile);
     }
 ?>
 

@@ -12,7 +12,7 @@
             Please fill the fields below to complete your registration.<br><br>
         </p>
 
-        <form class="form_register" method="post" action="../php/formValidation.php" onsubmit="return validateForm()">
+        <form id="myform" class="form_register" method="post" action="../php/formValidation.php" onsubmit="return validateForm()">
             <table>
                 <tr>
                     <td>
@@ -51,7 +51,7 @@
                         <label for="Email" >Email: </label>
                     </td>
                     <td>
-                        <input type="text" name="email" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="example@example.com" required>
+                        <input id="email" type="text" name="email" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="example@example.com" required>
                     </td>
                 </tr>
                 <!-- optional -->
@@ -60,7 +60,7 @@
                         <label for="Phone" >Phone: </label>
                     </td>
                     <td>
-                        <input type="text" name="phone" value="" pattern="^(\(?\d\d\)?\s?)\d{8}$">
+                        <input type="text" name="phone" value="" pattern="^(\(?\d\d\)?\s?)\d{8}$" title="(0d) dddddddd or 0d dddddddd">
                     </td>
                 </tr>
                 <!-- optional -->
@@ -69,8 +69,10 @@
                         <input type="submit" onclick="" name="register" value="Register">
                     </td>
                 </tr>
-                <div id="pwErr"></div>
             </table>
         </form>
+        <div id="pwErr"></div></br>
+        <div id="emailErr"></div></br>
+        <div id="message"></div>
     </body>
 </html>
