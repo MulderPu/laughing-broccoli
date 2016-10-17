@@ -17,13 +17,12 @@
         $xml->formatOutput=true;
         $xml->load($xmlFile);
 
+        //id record here
         $root = $xml->documentElement;
         $customerID = $root->childNodes->length;
 
         $infoTag = $xml->getElementsByTagName("informations")->item(0);
-
         $customerTag = $xml->createElement("customer");
-
         $idTag = $xml->createElement("customer_id", $customerID);
         $fNameTag = $xml->createElement("first_name",$_POST['first_name']);
         $surnameTag = $xml->createElement("surname",$_POST['last_name']);
@@ -45,11 +44,11 @@
     function createXML(){
         $fileName = "../data/customer.xml";
         $customerID = 0;
-        $xml = new DOMDocument();
+        $xml = new DOMDocument("1.0","UTF-8");
+        $xml->formatOutput=true;
+
         $infoTag = $xml->createElement("informations");
         $customerTag = $xml->createElement("customer");
-
-
         $idTag = $xml->createElement("customer_id", $customerID);
         $fNameTag = $xml->createElement("first_name",$_POST['first_name']);
         $surnameTag = $xml->createElement("surname",$_POST['last_name']);
