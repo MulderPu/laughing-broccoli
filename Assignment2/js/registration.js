@@ -3,14 +3,14 @@ function validateForm(){
     var pass2 = document.getElementById("pass2").value;
     var ok = true;
     if (pass1 != pass2) {
-        //alert("Passwords Do not match");
-        document.getElementById("pass1").style.borderColor = "#E34234";
-        document.getElementById("pass2").style.borderColor = "#E34234";
+        //alert("password not match");
+        document.getElementById("pass1").value = "";
+        document.getElementById("pass2").value = "";
+        document.getElementById("pwErr").innerHTML = "Password is incorrect!";
         ok = false;
     }
     else {
-        alert("Passwords Match!!!");
-        // document.getElementById("regForm").submit();
+        // alert("password match!!!");
     }
     return ok;
 }

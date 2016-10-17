@@ -12,7 +12,7 @@
             Please fill the fields below to complete your registration.<br><br>
         </p>
 
-        <form id="regform" class="form_register" method="post" action="../php/formValidation.php" onsubmit="return validateForm()">
+        <form class="form_register" method="post" action="../php/formValidation.php" onsubmit="return validateForm()">
             <table>
                 <tr>
                     <td>
@@ -60,7 +60,7 @@
                         <label for="Phone" >Phone: </label>
                     </td>
                     <td>
-                        <input type="text" name="phone" value="" pattern="^(\(?\d\d\)?\s?)\d{8}$" required>
+                        <input type="text" name="phone" value="" pattern="^(\(?\d\d\)?\s?)\d{8}$">
                     </td>
                 </tr>
                 <!-- optional -->
@@ -69,6 +69,7 @@
                         <input type="submit" onclick="" name="register" value="Register">
                     </td>
                 </tr>
+                <div id="pwErr"></div>
             </table>
         </form>
     </body>

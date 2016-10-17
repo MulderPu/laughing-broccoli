@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<informations>
+  <customer>
+    <customer_id>0</customer_id>
+    <first_name>sad</first_name>
+    <surname>sad</surname>
+    <email>sad@sad.com</email>
+    <password>sad</password>
+    <contact/>
+  </customer>
+  <customer>
+    <customer_id>1</customer_id>
+    <first_name>sad</first_name>
+    <surname>sad</surname>
+    <email>sad@sad.com</email>
+    <password>sad</password>
+    <contact/>
+  </customer>
+<customer><customer_id>5</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>6</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>7</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>8</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>9</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>10</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer><customer><customer_id>11</customer_id><first_name>sad</first_name><surname>sad</surname><email>sad@sad.com</email><password>sad</password><contact/></customer></informations>
