@@ -83,7 +83,7 @@
 
     <script type="text/javascript">
         function back(){
-            location.href = "../htm/register.htm";
+            location.href = "../htm/buyonline.htm";
         }
     </script>
 </html>
