@@ -10,24 +10,24 @@ function managerLogin(){
     var manager_id = document.getElementById("manager_id").value;
     var password = document.getElementById("password").value;
 
+    xmlhttp.open("GET", "../php/managerLogin.php?manager_id=" + manager_id + "&password=" + password, true);
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("status").innerHTML = "";
 
             var resp = this.responseText;
-            // alert(resp);
-            // console.log(responseText);
+
             if (resp == "success") {
-                alert("1");
-                document.getElementById("status").innerHTML = "Login Success!";
-                location.href = "../htm/buyonline.htm";
+                window.location = "../htm/buyonline.htm";
             }else{
-                alert("2");
-                document.getElementById("status").innerHTML = "Failed to login. Invalid ID or password. Please check again!";
+                // alert("FAILED");
+                document.getElementById("status").innerHTML = "Invalid ID or password. Please check again!";
                 document.getElementById("manager_id").value = "";
                 document.getElementById("password").value = "";
             }
         }
     }
-    xmlhttp.open("GET", "../php/managerLogin.php?manager_id=" + manager_id + "&password=" + password, true);
+
     xmlhttp.send(null);
+
 }

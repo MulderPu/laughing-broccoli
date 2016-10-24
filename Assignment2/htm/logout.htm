@@ -2,9 +2,18 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="author" content="Mulder Pu Ming Fei">
         <title>Logout</title>
+        <script type="text/javascript" src="../js/logout.js"></script>
     </head>
     <body>
-        <h1>Thank You! See you again!</h1>
+        <h1>Thank You! See you again <span id="user"></span>!</h1>
+        <button type="button" name="button" onclick="back()">Back</button>
     </body>
 </html>
+
+<script type="text/javascript">
+    function back(){
+        location.href = "../htm/buyonline.htm";
+    }
+</script>
