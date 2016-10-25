@@ -8,6 +8,12 @@ if (isset($_SESSION["manager"])) {
 	}
 }
 
+if (isset($_SESSION["customer"])) {
+	if (!$_SESSION["customer"] == "") {
+		echo $_SESSION["customer"];
+	}
+}
+
 session_destroy();
 
 ?>
