@@ -5,9 +5,10 @@
         <meta name="author" content="Mulder Pu Ming Fei">
         <title>Listing</title>
         <link rel="stylesheet" href="../css/style.css">
-        <!-- <script type="text/javascript" src="../js/manager.js"></script> -->
+        <script type="text/javascript" src="../js/listing.js"></script>
     </head>
     <body>
+        <h1>Listing</h1>
         <div class="navigation">
             <ul>
               <li id="home"><a href="../htm/buyonline.htm">Home</a></li>
@@ -18,5 +19,54 @@
             <hr>
         </div>
 
+        <form class="listing">
+            <table id="mytable" border="1">
+                <tr>
+                    <td>
+                        <label for="Item name">Item name: </label>
+                    </td>
+                    <td>
+                        <input id="item_name" type="text" name="item_name" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Item price">Item price: </label>
+                    </td>
+                    <td>
+                        <input id="item_price" type="text" name="item_price" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Item quantity">Item quantity: </label>
+                    </td>
+                    <td>
+                        <input id="item_quantity" type="text" name="item_quantity" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Item description">Item description: </label>
+                    </td>
+                    <td>
+                        <textarea id="item_desc" name="item_desc" rows="8" cols="40"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="add()">Add item</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="reset()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="nameErr"></div></br>
+        <div id="priceErr"></div></br>
+        <div id="quanErr"></div></br>
+        <div id="descErr"></div>
+        <div id="status"></div>
     </body>
 </html>

@@ -8,3 +8,11 @@ li {
     display: inline;
     padding-left: 10px;
 }
+
+th, td {
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
