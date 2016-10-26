@@ -58,7 +58,7 @@
 
         $goodsTag = $xml->createElement("goods");
         $goodTag = $xml->createElement("good");
-        $idTag = $xml->createElement("customer_id", $goodID);
+        $idTag = $xml->createElement("good_id", $goodID);
         $nameTag = $xml->createElement("item_name", $item_name);
         $priceTag = $xml->createElement("item_price",$item_price);
         $quantityTag = $xml->createElement("item_quantity",$item_quantity);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <goods>
   <good>
-    <customer_id>0</customer_id>
+    <good_id>0</good_id>
     <item_name>iphone</item_name>
     <item_price>4000</item_price>
     <item_quantity>12</item_quantity>

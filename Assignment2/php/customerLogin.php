@@ -26,7 +26,7 @@
     			$email = $cus->getElementsByTagName("email")->item(0)->nodeValue;
     			$pass = $cus->getElementsByTagName("password")->item(0)->nodeValue;
 
-    			if ( $email==$customer_email && $pass==$password) {
+    			if ($email==$customer_email && $pass==$password) {
     				$customer_id = $cus->getElementsByTagName("customer_id")->item(0)->nodeValue;
                     return $customer_id;
     			}

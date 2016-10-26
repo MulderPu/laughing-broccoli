@@ -16,7 +16,7 @@ function customerLogin(){
             document.getElementById("status").innerHTML = "";
 
             var resp = this.responseText;
-            alert(resp);
+            // alert(resp);
             if (resp == "success") {
                 window.location = "../htm/buying.htm";
             }else{
