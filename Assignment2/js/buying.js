@@ -43,7 +43,7 @@ function getShoppingItem(){
 
                     var itemNumber = document.createTextNode(good[i].getElementsByTagName('good_id')[0].textContent);
                     var itemName = document.createTextNode(good[i].getElementsByTagName('item_name')[0].textContent);
-                    var itemDesc = document.createTextNode(good[i].getElementsByTagName('item_desc')[0].textContent);
+                    var itemDesc = document.createTextNode(good[i].getElementsByTagName('item_desc')[0].textContent.substring(0,20));
                     var itemPrice = document.createTextNode(good[i].getElementsByTagName('item_price')[0].textContent);
                     var itemQuantity = document.createTextNode(good[i].getElementsByTagName('item_quantity')[0].textContent);
                     var buttonText = document.createTextNode('Add one to cart');
@@ -56,6 +56,7 @@ function getShoppingItem(){
                     td_addButton.appendChild(td_button);
                     td_button.appendChild(buttonText);
                     td_button.setAttribute('type','button');
+                    td_button.setAttribute('onclick',"addCart(" + itemNumber.nodeValue + "," + itemPrice.nodeValue + ")");
 
                     tr.appendChild(td_itemNumber);
                     tr.appendChild(td_itemName);
@@ -72,6 +73,19 @@ function getShoppingItem(){
     xmlhttp.send(null);
 }
 
-function addCart(){
+function addCart(item_number, item_price){
+    xmlhttp.open("GET", "../php/addCart.php?item_number=" + item_number + "&item_price=" + item_price, true);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = this.responseText;
+            alert(resp);
 
+            if( resp == "unavailable"){
+                alert("Sorry, this item is not available for sale.");
+            }else if (resp == "available"){
+                alert("yes");
+            }
+        }
+    }
+    xmlhttp.send(null);
 }
