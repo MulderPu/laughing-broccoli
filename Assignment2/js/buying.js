@@ -78,7 +78,7 @@ function addCart(item_number, item_price){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var resp = this.responseText;
-            alert(resp);
+            // alert(resp);
 
             if( resp == "unavailable"){
                 alert("Sorry, this item is not available for sale.");
