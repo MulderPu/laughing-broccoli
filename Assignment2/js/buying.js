@@ -122,7 +122,7 @@ function printShoppingCart(xmlDoc){
         td_addButton.appendChild(td_button);
         td_button.appendChild(buttonText);
         td_button.setAttribute('type','button');
-        td_button.setAttribute('onclick',"removeCart(" + itemNumber.nodeValue + "," + itemPrice.nodeValue + ")");
+        td_button.setAttribute('onclick',"removeCart(" + itemNumber.nodeValue + ")");
 
         tr.appendChild(td_itemNumber);
         tr.appendChild(td_itemPrice);
@@ -171,4 +171,20 @@ function printShoppingCart(xmlDoc){
     tr.appendChild(td_addButton2);
 
     table.appendChild(tr);
+}
+
+function removeCart(item_number){
+    xmlhttp.open("GET", "../php/removeCart.php?item_number=" + item_number, true);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = this.responseText;
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(resp,"text/xml");
+
+            printShoppingCart(xmlDoc);
+
+
+        }
+    }
+    xmlhttp.send(null);
 }

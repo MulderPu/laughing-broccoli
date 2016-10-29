@@ -4,9 +4,9 @@
     <good_id>0</good_id>
     <item_name>iphone</item_name>
     <item_price>4000</item_price>
-    <item_quantity>150</item_quantity>
+    <item_quantity>146</item_quantity>
     <item_desc>iphone la</item_desc>
-    <on_hold>0</on_hold>
+    <on_hold>4</on_hold>
     <quantity_sold>0</quantity_sold>
   </good>
-<good><good_id>3</good_id><item_name>iphone</item_name><item_price>4000</item_price><item_quantity>6</item_quantity><item_desc>iphone la</item_desc><on_hold>6</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>4</good_id><item_name>iphone</item_name><item_price>4000</item_price><item_quantity>7</item_quantity><item_desc>iphone la</item_desc><on_hold>5</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>5</good_id><item_name/><item_price/><item_quantity/><item_desc/><on_hold>0</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>6</good_id><item_name>iphone</item_name><item_price>1</item_price><item_quantity>0</item_quantity><item_desc>qwe</item_desc><on_hold>1</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>7</good_id><item_name>iphone 7 </item_name><item_price>1</item_price><item_quantity>0</item_quantity><item_desc>qwe</item_desc><on_hold>1</on_hold><quantity_sold>0</quantity_sold></good></goods>
+<good><good_id>3</good_id><item_name>iphone</item_name><item_price>4000</item_price><item_quantity>51</item_quantity><item_desc>iphone la</item_desc><on_hold>6</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>4</good_id><item_name>iphone</item_name><item_price>4000</item_price><item_quantity>61</item_quantity><item_desc>iphone la</item_desc><on_hold>5</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>5</good_id><item_name/><item_price/><item_quantity/><item_desc/><on_hold>0</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>6</good_id><item_name>iphone</item_name><item_price>1</item_price><item_quantity>0</item_quantity><item_desc>qwe</item_desc><on_hold>1</on_hold><quantity_sold>0</quantity_sold></good><good><good_id>7</good_id><item_name>iphone 7 </item_name><item_price>1</item_price><item_quantity>0</item_quantity><item_desc>qwe</item_desc><on_hold>1</on_hold><quantity_sold>0</quantity_sold></good></goods>
