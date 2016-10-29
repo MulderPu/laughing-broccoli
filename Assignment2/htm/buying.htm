@@ -31,11 +31,29 @@
 
         <h1>Shopping Cart</h1>
         <table id="tableCart" border="1">
-            <tr>
+            <tr id = "table_header" class="table_header">
                 <th>Item Number</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Remove</th>
+            </tr>
+            <tr>
+                <tr id="total" class="total">
+                    <td colspan="3">
+                        Total:
+                    </td>
+                    <td>
+                        $<div class="totalValue"></div>
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" name="confirm_Purchase">Confirm Purchase</button>
+                </td>
+                <td colspan="2">
+                    <button type="button" name="cancel_Purchase">Cancel Purchase</button>
+                </td>
             </tr>
         </table>
     </body>

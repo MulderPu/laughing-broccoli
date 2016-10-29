@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $itemNum = $_GET['item_number'];
     $itemPrice = $_GET['item_price'];
 
@@ -8,7 +10,7 @@
 
     $quantityCheck = checkItemQuantity($itemNum);
     if($quantityCheck == true){
-        echo "available";
+        // echo "available";
         addItemToHold($itemNum);
 
         //check if session is empty
@@ -41,7 +43,49 @@
     }
 
     function toXml($cart){
-        
+
+        $xmlFile = "../data/testing.xml";
+        $xml = new DOMDocument("1.0","UTF-8");
+        $xml->formatOutput=true;
+        $total =0;
+        $cartTag = $xml->createElement("cart");
+        $itemsTag = $xml->createElement("items");
+
+        foreach ($cart as $itemNum => $data) {
+            $itemTag = $xml->createElement('item');
+            $itemNumTag = $xml->createElement('item_number');
+            $itemQuantityTag = $xml->createElement('item_quantity');
+            $itemPriceTag = $xml->createElement('item_price');
+
+            $itemNumTagText = $xml->createTextNode($itemNum);
+            $itemQuantityTagText = $xml->createTextNode($data[0]);
+            $itemPriceTagText = $xml->createTextNode($data[1]);
+
+            $itemNumTag->appendChild($itemNumTagText);
+            $itemQuantityTag->appendChild($itemQuantityTagText);
+            $itemPriceTag->appendChild($itemPriceTagText);
+
+            $itemTag->appendChild($itemNumTag);
+            $itemTag->appendChild($itemQuantityTag);
+            $itemTag->appendChild($itemPriceTag);
+
+            $itemsTag->appendChild($itemTag);
+
+            $productPrice = $data[0] * $data[1];
+            $total += $productPrice;
+        }
+
+        $totalTag = $xml->createElement('total');
+        $totalTagText = $xml->createTextNode($total);
+        $totalTag->appendChild($totalTagText);
+
+        $cartTag->appendChild($totalTag);
+        $cartTag->appendChild($itemsTag);
+
+        $xml->appendChild($cartTag);
+        $xmlDoc= $xml->saveXML();
+        echo $xmlDoc;
+        // $xml->save($xmlFile);
     }
 
     function checkItemQuantity($itemNum){
