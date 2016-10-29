@@ -78,17 +78,14 @@ function addCart(item_number, item_price){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var resp = this.responseText;
-            // alert(resp);
 
             if( resp == "unavailable"){
                 alert("Sorry, this item is not available for sale.");
             }else{
-                // alert("yes");
                 var parser = new DOMParser();
                 var xmlDoc = parser.parseFromString(resp,"text/xml");
 
                 printShoppingCart(xmlDoc);
-                // alert(xmlDoc);
             }
         }
     }
@@ -96,8 +93,6 @@ function addCart(item_number, item_price){
 }
 
 function printShoppingCart(xmlDoc){
-    console.log(xmlDoc);
-    // alert(xmlDoc);
     var item = xmlDoc.getElementsByTagName('item');
     var table = document.getElementById('tableCart');
 
@@ -108,39 +103,72 @@ function printShoppingCart(xmlDoc){
 
     for (var i = 0; i < item.length; i++) {
 
+        var tr = document.createElement('tr');
 
+        var td_itemNumber = document.createElement('td');
+        var td_itemPrice  = document.createElement('td');
+        var td_itemQuantity = document.createElement('td');
+        var td_addButton = document.createElement('td');
+        var td_button = document.createElement('button');
 
-            var tr = document.createElement('tr');
-            // table.insertAfter(tr, table.getElementsByClassName('table_header')[0]);
-// table.insertBefore(tr, table.getElementsByClassName('total')[0]);
+        var itemNumber = document.createTextNode(item[i].getElementsByTagName('item_number')[0].textContent);
+        var itemPrice = document.createTextNode(item[i].getElementsByTagName('item_price')[0].textContent);
+        var itemQuantity = document.createTextNode(item[i].getElementsByTagName('item_quantity')[0].textContent);
+        var buttonText = document.createTextNode('Remove from cart');
 
-            var td_itemNumber = document.createElement('td');
-            var td_itemPrice  = document.createElement('td');
-            var td_itemQuantity = document.createElement('td');
-            var td_addButton = document.createElement('td');
-            var td_button = document.createElement('button');
+        td_itemNumber.appendChild(itemNumber);
+        td_itemPrice.appendChild(itemPrice);
+        td_itemQuantity.appendChild(itemQuantity);
+        td_addButton.appendChild(td_button);
+        td_button.appendChild(buttonText);
+        td_button.setAttribute('type','button');
+        td_button.setAttribute('onclick',"removeCart(" + itemNumber.nodeValue + "," + itemPrice.nodeValue + ")");
 
-            var itemNumber = document.createTextNode(item[i].getElementsByTagName('item_number')[0].textContent);
-            var itemPrice = document.createTextNode(item[i].getElementsByTagName('item_price')[0].textContent);
-            var itemQuantity = document.createTextNode(item[i].getElementsByTagName('item_quantity')[0].textContent);
-            var buttonText = document.createTextNode('Remove from cart');
+        tr.appendChild(td_itemNumber);
+        tr.appendChild(td_itemPrice);
+        tr.appendChild(td_itemQuantity);
+        tr.appendChild(td_addButton);
 
-            td_itemNumber.appendChild(itemNumber);
-            td_itemPrice.appendChild(itemPrice);
-            td_itemQuantity.appendChild(itemQuantity);
-            td_addButton.appendChild(td_button);
-            td_button.appendChild(buttonText);
-            td_button.setAttribute('type','button');
-            td_button.setAttribute('onclick',"removeCart(" + itemNumber.nodeValue + "," + itemPrice.nodeValue + ")");
-
-            tr.appendChild(td_itemNumber);
-            tr.appendChild(td_itemPrice);
-            tr.appendChild(td_itemQuantity);
-            tr.appendChild(td_addButton);
-
-            table.appendChild(tr);
-
+        table.appendChild(tr);
     }
 
-    // document.getElementById("totalValue").innerHTML = xmlDoc.getElementsByTagName("total")[0].textContent;
+    //table row that print total
+    var tr = document.createElement('tr');
+    var td_totalLabel = document.createElement('td');
+    var td_totalValue = document.createElement('td');
+    var totalLabel = document.createTextNode("Total: ");
+    var totalValue = document.createTextNode("$ "+xmlDoc.getElementsByTagName('total')[0].textContent);
+    td_totalLabel.appendChild(totalLabel);
+    td_totalLabel.setAttribute('colSpan','3');
+    td_totalValue.appendChild(totalValue);
+    tr.appendChild(td_totalLabel);
+    tr.appendChild(td_totalValue);
+    table.appendChild(tr);
+
+    //table row for button confirm purchase
+    var tr = document.createElement('tr');
+    var td_addButton1 = document.createElement('td');
+    var td_button1 = document.createElement('button');
+    var buttonText1 = document.createTextNode('Confirm Purchase');
+    td_button1.appendChild(buttonText1);
+    td_button1.setAttribute('type','button');
+    td_button1.setAttribute('onclick',"");
+    td_addButton1.appendChild(td_button1);
+    td_addButton1.setAttribute('colSpan','2');
+    td_addButton1.setAttribute('align','center');
+    tr.appendChild(td_addButton1);
+
+    // button cancel purchase
+    var td_addButton2 = document.createElement('td');
+    var td_button2 = document.createElement('button');
+    var buttonText2 = document.createTextNode('Cancel Purchase');
+    td_button2.appendChild(buttonText2);
+    td_button2.setAttribute('type','button');
+    td_button2.setAttribute('onclick',"");
+    td_addButton2.appendChild(td_button2);
+    td_addButton2.setAttribute('colSpan','2');
+    td_addButton2.setAttribute('align','center');
+    tr.appendChild(td_addButton2);
+
+    table.appendChild(tr);
 }

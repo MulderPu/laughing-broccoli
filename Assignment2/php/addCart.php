@@ -19,7 +19,7 @@
             $cart = $_SESSION['cart'];
 
             //check if inside session is empty
-            if($cart[$itemNum] != ""){
+            if(isset($cart[$itemNum])){
                 //if not , then add 1
                 $quantity = $cart[$itemNum][0] + 1;
     			$cart[$itemNum][0] = $quantity;
