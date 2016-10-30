@@ -137,10 +137,11 @@ function printShoppingCart(xmlDoc){
     var td_totalLabel = document.createElement('td');
     var td_totalValue = document.createElement('td');
     var totalLabel = document.createTextNode("Total: ");
-    var totalValue = document.createTextNode("$ "+xmlDoc.getElementsByTagName('total')[0].textContent);
+    var totalValue = document.createTextNode("$" + xmlDoc.getElementsByTagName('total')[0].textContent);
     td_totalLabel.appendChild(totalLabel);
     td_totalLabel.setAttribute('colSpan','3');
     td_totalValue.appendChild(totalValue);
+    td_totalValue.setAttribute('id', 'totalValue');
     tr.appendChild(td_totalLabel);
     tr.appendChild(td_totalValue);
     table.appendChild(tr);
@@ -152,7 +153,7 @@ function printShoppingCart(xmlDoc){
     var buttonText1 = document.createTextNode('Confirm Purchase');
     td_button1.appendChild(buttonText1);
     td_button1.setAttribute('type','button');
-    td_button1.setAttribute('onclick',"");
+    td_button1.setAttribute('onclick',"confirmPurchase()");
     td_addButton1.appendChild(td_button1);
     td_addButton1.setAttribute('colSpan','2');
     td_addButton1.setAttribute('align','center');
@@ -173,6 +174,28 @@ function printShoppingCart(xmlDoc){
     table.appendChild(tr);
 }
 
+function confirmPurchase(){
+    xmlhttp.open("GET", "../php/confirmPurchase.php?", true);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = this.responseText;
+            if (resp == "confirm") {
+                var totalValue = document.getElementById('totalValue').innerHTML;
+                // alert(totalValue);
+                // console.log(totalValue);
+                var table = document.getElementById('tableCart');
+
+                //remove old lists
+                while (table.childElementCount > 1) {
+                    table.removeChild(table.lastChild);
+                }
+                alert("Your purchase has been confirmed and total amount due to pay is " + totalValue + ".");
+            }
+        }
+    }
+    xmlhttp.send(null);
+}
+
 function removeCart(item_number){
     xmlhttp.open("GET", "../php/removeCart.php?item_number=" + item_number, true);
     xmlhttp.onreadystatechange = function() {
@@ -182,8 +205,6 @@ function removeCart(item_number){
             var xmlDoc = parser.parseFromString(resp,"text/xml");
 
             printShoppingCart(xmlDoc);
-
-
         }
     }
     xmlhttp.send(null);

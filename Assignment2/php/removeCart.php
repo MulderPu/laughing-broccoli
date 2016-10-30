@@ -31,8 +31,8 @@
                     $good->getElementsByTagName("on_hold")->item(0)->nodeValue = $hold - $quantity;
         		}
         	}
-            $xml->save($filename);
-            unset($cart[$itemNum]);
+            $xml->save($filename); //save to xml
+            unset($cart[$itemNum]); //destroy this item
         }
 
         //rewrite session
