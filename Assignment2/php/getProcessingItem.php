@@ -1,5 +1,4 @@
 <?php
-
     header('Content-Type: text/xml');
 
     $filename = "../data/goods.xml";
