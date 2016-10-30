@@ -165,13 +165,33 @@ function printShoppingCart(xmlDoc){
     var buttonText2 = document.createTextNode('Cancel Purchase');
     td_button2.appendChild(buttonText2);
     td_button2.setAttribute('type','button');
-    td_button2.setAttribute('onclick',"");
+    td_button2.setAttribute('onclick',"cancelPurchase()");
     td_addButton2.appendChild(td_button2);
     td_addButton2.setAttribute('colSpan','2');
     td_addButton2.setAttribute('align','center');
     tr.appendChild(td_addButton2);
 
     table.appendChild(tr);
+}
+
+function cancelPurchase(){
+    xmlhttp.open("GET", "../php/cancelPurchase.php?", true);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = this.responseText;
+            if (resp == "cancel") {
+                var table = document.getElementById('tableCart');
+                
+                //remove old lists
+                while (table.childElementCount > 1) {
+                    table.removeChild(table.lastChild);
+                }
+
+                alert("Your purchase request has been cancelled, welcome to shop again next time!");
+            }
+        }
+    }
+    xmlhttp.send(null);
 }
 
 function confirmPurchase(){
