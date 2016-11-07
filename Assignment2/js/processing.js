@@ -1,17 +1,17 @@
 var xmlhttp;
-if (window.XMLHttpRequest){
+if (window.XMLHttpRequest){ //code for modern browsers
     xmlhttp = new XMLHttpRequest();
 }
-else if (window.ActiveXObject){
+else if (window.ActiveXObject){ // code for IE6, IE5
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
-getProcessingItem();
+getProcessingItem(); //get processing item from db
 
 function getProcessingItem(){
     xmlhttp.open("GET", "../php/getProcessingItem.php", true);
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) { //data load and status ok
 
             var resp = this.responseXML;
             // console.log(resp);
@@ -35,8 +35,6 @@ function getProcessingItem(){
                     var td_itemQuantity = document.createElement('td');
                     var td_itemOnHold = document.createElement('td');
                     var td_itemSold = document.createElement('td');
-                    // var td_addButton = document.createElement('td');
-                    // var td_button = document.createElement('button');
 
                     var itemNumber = document.createTextNode(good[i].getElementsByTagName('good_id')[0].textContent);
                     var itemName = document.createTextNode(good[i].getElementsByTagName('item_name')[0].textContent);
@@ -44,7 +42,6 @@ function getProcessingItem(){
                     var itemQuantity = document.createTextNode(good[i].getElementsByTagName('item_quantity')[0].textContent);
                     var itemOnHold = document.createTextNode(good[i].getElementsByTagName('on_hold')[0].textContent);
                     var itemSold = document.createTextNode(good[i].getElementsByTagName('quantity_sold')[0].textContent);
-                    // var buttonText = document.createTextNode('Add one to cart');
 
                     td_itemNumber.appendChild(itemNumber);
                     td_itemName.appendChild(itemName);
@@ -53,18 +50,12 @@ function getProcessingItem(){
                     td_itemOnHold.appendChild(itemOnHold);
                     td_itemSold.appendChild(itemSold);
 
-                    // td_addButton.appendChild(td_button);
-                    // td_button.appendChild(buttonText);
-                    // td_button.setAttribute('type','button');
-                    // td_button.setAttribute('onclick',"addCart(" + itemNumber.nodeValue + "," + itemPrice.nodeValue + ")");
-
                     tr.appendChild(td_itemNumber);
                     tr.appendChild(td_itemName);
                     tr.appendChild(td_itemPrice);
                     tr.appendChild(td_itemQuantity);
                     tr.appendChild(td_itemOnHold);
                     tr.appendChild(td_itemSold);
-                    // tr.appendChild(td_addButton);
 
                     table.appendChild(tr);
                 }
@@ -88,6 +79,7 @@ function getProcessingItem(){
     xmlhttp.send(null);
 }
 
+// process item in the table 
 function process(){
     xmlhttp.open("GET", "../php/process.php?", true);
     xmlhttp.onreadystatechange = function() {

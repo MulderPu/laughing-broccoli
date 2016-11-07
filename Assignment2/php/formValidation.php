@@ -4,13 +4,13 @@
     if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['email']) || isset($_POST['phone']) ){
         $xmlFile = "../data/customer.xml";
         if(!file_exists($xmlFile)){
-            createXML();
+            createXML(); //create file and save if file not exist
         }else{
-            saveToXML();
+            saveToXML(); //save file
         }
     }
 
-
+    //save info into xml
     function saveToXML(){
         $xmlFile = "../data/customer.xml";
         $xml = new DOMDocument("1.0","UTF-8");

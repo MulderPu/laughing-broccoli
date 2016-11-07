@@ -1,13 +1,13 @@
 var xmlhttp;
-if (window.XMLHttpRequest){
+if (window.XMLHttpRequest){ //code for modern browsers
     xmlhttp = new XMLHttpRequest();
 }
-else if (window.ActiveXObject){
+else if (window.ActiveXObject){ // code for IE6, IE5
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
-getShoppingItem();
-retrieveData();
+getShoppingItem(); //get shopping item and place in table
+retrieveData(); //refresh every 10sec
 
 function retrieveData(){
     var refresh=setInterval(getShoppingItem, 10000);
@@ -17,7 +17,7 @@ function getShoppingItem(){
 
     xmlhttp.open("GET", "../php/getShoppingItem.php", true);
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) { //data load and status ok
 
             var resp = this.responseXML;
 
@@ -29,6 +29,7 @@ function getShoppingItem(){
         		table.removeChild(table.lastChild);
         	}
 
+            //generate table row with items
             for (var i = 0; i < good.length; i++) {
                 var quantity = good[i].getElementsByTagName('item_quantity')[0].textContent;
                 if(quantity != 0){
@@ -73,6 +74,7 @@ function getShoppingItem(){
     xmlhttp.send(null);
 }
 
+//add item to cart
 function addCart(item_number, item_price){
     xmlhttp.open("GET", "../php/addCart.php?item_number=" + item_number + "&item_price=" + item_price, true);
     xmlhttp.onreadystatechange = function() {
@@ -82,6 +84,7 @@ function addCart(item_number, item_price){
             if( resp == "unavailable"){
                 alert("Sorry, this item is not available for sale.");
             }else{
+                //handle xml formatted text as xml doc
                 var parser = new DOMParser();
                 var xmlDoc = parser.parseFromString(resp,"text/xml");
 
@@ -174,6 +177,7 @@ function printShoppingCart(xmlDoc){
     table.appendChild(tr);
 }
 
+//cancel purchase and clear list
 function cancelPurchase(){
     xmlhttp.open("GET", "../php/cancelPurchase.php?", true);
     xmlhttp.onreadystatechange = function() {
@@ -181,7 +185,7 @@ function cancelPurchase(){
             var resp = this.responseText;
             if (resp == "cancel") {
                 var table = document.getElementById('tableCart');
-                
+
                 //remove old lists
                 while (table.childElementCount > 1) {
                     table.removeChild(table.lastChild);
@@ -194,6 +198,7 @@ function cancelPurchase(){
     xmlhttp.send(null);
 }
 
+//confirm Purchase and calculate total value of cart
 function confirmPurchase(){
     xmlhttp.open("GET", "../php/confirmPurchase.php?", true);
     xmlhttp.onreadystatechange = function() {
@@ -216,6 +221,7 @@ function confirmPurchase(){
     xmlhttp.send(null);
 }
 
+//remove selected item from the cart
 function removeCart(item_number){
     xmlhttp.open("GET", "../php/removeCart.php?item_number=" + item_number, true);
     xmlhttp.onreadystatechange = function() {

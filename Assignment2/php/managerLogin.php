@@ -10,6 +10,7 @@
         echo "failed";
     }
 
+    // check manager account
     function accountCheck($manager_id, $password){
         $filename = "../data/manager.txt";
         $file = "";

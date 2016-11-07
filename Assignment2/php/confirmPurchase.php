@@ -21,6 +21,7 @@
     $_SESSION['cart'] = "";
     echo "confirm";
 
+    // purchase item
     function purchase($itemNum){
         if ( $_SESSION['cart'] != "" ) {
             $cart = $_SESSION['cart'];

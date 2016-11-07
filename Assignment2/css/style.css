@@ -1,3 +1,4 @@
+/*navigation bar*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -9,6 +10,7 @@ li {
     padding-left: 10px;
 }
 
+/*table*/
 th, td {
     padding: 5px;
 }

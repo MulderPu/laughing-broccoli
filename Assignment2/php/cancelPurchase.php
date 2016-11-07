@@ -21,6 +21,7 @@
     $_SESSION['cart'] = "";
     echo "cancel";
 
+    // cancel purchase of the time and add item back to quantity
     function cancelPurchase($itemNum){
         if ( $_SESSION['cart'] != "" ) {
             $cart = $_SESSION['cart'];
@@ -51,9 +52,4 @@
             }
         }
     }
-
-
-
-
-
 ?>

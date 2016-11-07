@@ -6,5 +6,4 @@
     $xml = new DOMDocument();
     $xml->load($filename);
     echo $xml->savexml();
-
 ?>

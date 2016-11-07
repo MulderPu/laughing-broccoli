@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <informations>
-  <customer>
-    <customer_id>0</customer_id>
-    <first_name>qwe</first_name>
-    <surname>qwe</surname>
-    <email>sad@sad.com</email>
-    <password>qwe</password>
-    <contact/>
-  </customer>
-<customer><customer_id>3</customer_id><first_name>qwe</first_name><surname>qwe</surname><email>sad@saqwed.com</email><password>qwe</password><contact/></customer><customer><customer_id>4</customer_id><first_name>qwe</first_name><surname>qwe</surname><email>qwe@gmail.com</email><password>qweqwe</password><contact/></customer><customer><customer_id>5</customer_id><first_name>koiii</first_name><surname>koi</surname><email>koi@koi.com</email><password>koi</password><contact/></customer></informations>
+    <customer>
+        <customer_id>0</customer_id>
+        <first_name>qwe</first_name>
+        <surname>qwe</surname>
+        <email>sad@sad.com</email>
+        <password>qwe</password>
+        <contact/>
+    </customer>
+    <customer>
+        <customer_id>3</customer_id>
+        <first_name>qwe</first_name>
+        <surname>qwe</surname>
+        <email>sad@saqwed.com</email>
+        <password>qwe</password>
+        <contact/>
+    </customer>
+    <customer>
+        <customer_id>4</customer_id>
+        <first_name>qwe</first_name>
+        <surname>qwe</surname>
+        <email>qwe@gmail.com</email>
+        <password>qweqwe</password>
+        <contact/>
+    </customer>
+    <customer>
+        <customer_id>5</customer_id>
+        <first_name>koiii</first_name>
+        <surname>koi</surname>
+        <email>koi@koi.com</email>
+        <password>koi</password>
+        <contact/>
+    </customer>
+<customer><customer_id>9</customer_id><first_name>mira</first_name><surname>koi</surname><email>mira@mira.com</email><password>mirakoi</password><contact>06 12312312</contact></customer></informations>

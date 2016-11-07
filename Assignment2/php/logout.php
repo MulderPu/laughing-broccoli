@@ -15,5 +15,4 @@ if (isset($_SESSION["customer"])) {
 }
 
 session_destroy();
-
 ?>

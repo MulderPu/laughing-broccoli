@@ -7,10 +7,10 @@ function validateForm(){
        document.getElementById("myform").submit();
    }else{
        var xmlhttp;
-       if (window.XMLHttpRequest){
+       if (window.XMLHttpRequest){ //code for modern browsers
            xmlhttp = new XMLHttpRequest();
        }
-       else if (window.ActiveXObject){
+       else if (window.ActiveXObject){ // code for IE6, IE5
            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
        }
 

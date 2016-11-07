@@ -20,9 +20,5 @@
             $root->removeChild($good);
         }
     }
-
-
     $xml->save($filename); //save to xml
-
-
 ?>

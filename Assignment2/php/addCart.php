@@ -42,9 +42,9 @@
         echo "unavailable";
     }
 
+    // save into xml
     function toXml($cart){
-
-        $xmlFile = "../data/testing.xml";
+        // $xmlFile = "../data/testing.xml";
         $xml = new DOMDocument("1.0","UTF-8");
         $xml->formatOutput=true;
         $total =0;
@@ -88,6 +88,7 @@
         // $xml->save($xmlFile);
     }
 
+    //check quantity of item available
     function checkItemQuantity($itemNum){
         $filename = "../data/goods.xml";
     	$xml = new DOMDocument();
@@ -101,7 +102,7 @@
     		if ($goodID ==$itemNum) {
     			$quantity = $good->getElementsByTagName("item_quantity")->item(0)->nodeValue;
 
-    			if ($quantity > 0) {
+    			if ($quantity != 0) {
     				return true;
     			} else {
     				return false;
@@ -110,6 +111,7 @@
     	}
     }
 
+    // add item to on hold
     function addItemToHold($itemNum){
         $filename = "../data/goods.xml";
     	$xml = new DOMDocument();
@@ -126,11 +128,8 @@
 
                 $hold = $good->getElementsByTagName("on_hold")->item(0)->nodeValue;
                 $good->getElementsByTagName("on_hold")->item(0)->nodeValue = $hold + 1;
-
     		}
     	}
-
         $xml->save($filename);
     }
-
 ?>

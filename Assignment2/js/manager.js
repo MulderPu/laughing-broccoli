@@ -1,15 +1,17 @@
 var xmlhttp;
-if (window.XMLHttpRequest){
+if (window.XMLHttpRequest){ //code for modern browsers
     xmlhttp = new XMLHttpRequest();
 }
-else if (window.ActiveXObject){
+else if (window.ActiveXObject){ // code for IE6, IE5
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
 xmlhttp.open("GET", "../php/manager.php", true);
 xmlhttp.onreadystatechange = function() {
+    //data load and status ok
     if (this.readyState == 4 && this.status == 200) {
 
+        //get return get from server
         var resp = this.responseText;
         console.log(resp);
 
