@@ -26,8 +26,8 @@
 
                 if(trim($arrayOfLines[0]) == trim($manager_id) && trim($arrayOfLines[1]) == trim($password)){
                     return true;
+                    break;
                 }
-                break;
             }
             return false;
         }

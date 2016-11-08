@@ -2,29 +2,56 @@
 <goods>
     <good>
         <good_id>0</good_id>
-        <item_name>iphone</item_name>
-        <item_price>4000</item_price>
-        <item_quantity>105</item_quantity>
-        <item_desc>iphone la</item_desc>
-        <on_hold>34</on_hold>
+        <item_name>HUAWEI P9 LITE</item_name>
+        <item_price>1045</item_price>
+        <item_quantity>99</item_quantity>
+        <item_desc>huawei smart phone.</item_desc>
+        <on_hold>0</on_hold>
         <quantity_sold>0</quantity_sold>
     </good>
     <good>
-        <good_id>6</good_id>
-        <item_name>iphone</item_name>
-        <item_price>1000</item_price>
-        <item_quantity>100</item_quantity>
-        <item_desc>qwe</item_desc>
-        <on_hold>1</on_hold>
+        <good_id>1</good_id>
+        <item_name>IPHONE SE</item_name>
+        <item_price>2399</item_price>
+        <item_quantity>25</item_quantity>
+        <item_desc>cheap iphone</item_desc>
+        <on_hold>0</on_hold>
         <quantity_sold>0</quantity_sold>
     </good>
     <good>
-        <good_id>7</good_id>
-        <item_name>iphone 7 </item_name>
-        <item_price>10000</item_price>
+        <good_id>2</good_id>
+        <item_name>Baby oil</item_name>
+        <item_price>19</item_price>
+        <item_quantity>25</item_quantity>
+        <item_desc>oil</item_desc>
+        <on_hold>0</on_hold>
+        <quantity_sold>0</quantity_sold>
+    </good>
+    <good>
+        <good_id>3</good_id>
+        <item_name>HUAWEI P8 LITE</item_name>
+        <item_price>687</item_price>
         <item_quantity>50</item_quantity>
-        <item_desc>qwe</item_desc>
-        <on_hold>1</on_hold>
+        <item_desc>Nice lah.</item_desc>
+        <on_hold>0</on_hold>
+        <quantity_sold>0</quantity_sold>
+    </good>
+    <good>
+        <good_id>4</good_id>
+        <item_name>NISSAN GTR R34</item_name>
+        <item_price>850000</item_price>
+        <item_quantity>1</item_quantity>
+        <item_desc>GTR BRAND NEW</item_desc>
+        <on_hold>0</on_hold>
+        <quantity_sold>0</quantity_sold>
+    </good>
+    <good>
+        <good_id>5</good_id>
+        <item_name>SMART WATCH</item_name>
+        <item_price>2099</item_price>
+        <item_quantity>3</item_quantity>
+        <item_desc>Grab it!</item_desc>
+        <on_hold>0</on_hold>
         <quantity_sold>0</quantity_sold>
     </good>
 </goods>

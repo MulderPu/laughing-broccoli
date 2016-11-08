@@ -18,8 +18,12 @@
         $xml->load($xmlFile);
 
         //id record here
-        $root = $xml->documentElement;
-        $customerID = $root->childNodes->length;
+        $listOfCus = $xml->getElementsByTagName("customer");
+        $cusSize = $listOfCus->length; //get size of child in root
+
+        //take last child and plus 1 for id
+        $lastChildNodes = $listOfCus[$cusSize -1];
+        $customerID = $lastChildNodes->getElementsByTagName("customer_id")->item(0)->nodeValue + 1;
 
         $infoTag = $xml->getElementsByTagName("informations")->item(0);
         $customerTag = $xml->createElement("customer");
@@ -64,9 +68,7 @@
         $customerTag->appendChild($contactTag);
 
         $infoTag->appendChild($customerTag);
-
         $xml->appendChild($infoTag);
-
         $xml->save($xmlFile);
     }
 ?>

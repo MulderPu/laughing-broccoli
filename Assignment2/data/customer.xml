@@ -2,34 +2,26 @@
 <informations>
     <customer>
         <customer_id>0</customer_id>
-        <first_name>qwe</first_name>
-        <surname>qwe</surname>
-        <email>sad@sad.com</email>
-        <password>qwe</password>
-        <contact/>
+        <first_name>Mira</first_name>
+        <surname>Koi</surname>
+        <email>mira@mira.com</email>
+        <password>koi</password>
+        <contact>09 12345678</contact>
     </customer>
     <customer>
-        <customer_id>3</customer_id>
-        <first_name>qwe</first_name>
-        <surname>qwe</surname>
-        <email>sad@saqwed.com</email>
-        <password>qwe</password>
-        <contact/>
-    </customer>
-    <customer>
-        <customer_id>4</customer_id>
-        <first_name>qwe</first_name>
-        <surname>qwe</surname>
-        <email>qwe@gmail.com</email>
-        <password>qweqwe</password>
-        <contact/>
-    </customer>
-    <customer>
-        <customer_id>5</customer_id>
-        <first_name>koiii</first_name>
-        <surname>koi</surname>
+        <customer_id>1</customer_id>
+        <first_name>Ayuzawa</first_name>
+        <surname>Koi</surname>
         <email>koi@koi.com</email>
+        <password>koi</password>
+        <contact>06 01324567</contact>
+    </customer>
+    <customer>
+        <customer_id>2</customer_id>
+        <first_name>Koi</first_name>
+        <surname>Fish</surname>
+        <email>fish@fish.com</email>
         <password>koi</password>
         <contact/>
     </customer>
-<customer><customer_id>9</customer_id><first_name>mira</first_name><surname>koi</surname><email>mira@mira.com</email><password>mirakoi</password><contact>06 12312312</contact></customer></informations>
+</informations>

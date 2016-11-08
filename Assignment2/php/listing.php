@@ -17,11 +17,15 @@
         $xml->formatOutput=true;
         $xml->load($xmlFile);
 
-        //id record here
-        $root = $xml->documentElement;
-        $goodID = $root->childNodes->length;
         $item_onHold = 0;
         $item_quantitySold = 0;
+
+        $listOfGood = $xml->getElementsByTagName("good");
+        $goodSize = $listOfGood->length; //get size of child in root
+
+        //take last child and plus 1 for id
+        $lastChildNodes = $listOfGood[$goodSize -1];
+        $goodID = $lastChildNodes->getElementsByTagName("good_id")->item(0)->nodeValue + 1;
 
         $goodsTag = $xml->getElementsByTagName("goods")->item(0);
         $goodTag = $xml->createElement("good");
@@ -78,5 +82,6 @@
 
         $xml->appendChild($goodsTag);
         $xml->save($xmlFile);
+        echo $goodID;
     }
 ?>
